@@ -37,14 +37,17 @@ def ajax():
     buf = []
     if email_addr and email_subject:
         buf.append(
-            f"""
+            """
             <p>
-                Original price @ amazon.es: <strong>{raw_price:.2f}€</strong>
+                Original price @ amazon.es: <strong>{:.2f}€</strong>
                 <br>
                 VAT excluded price:
-                <strong>{amazon_price.vat_excluded_price:.2f}€</strong>
+                <strong>{:.2f}€</strong>
             </p>
-            """
+            """.format(
+                raw_price,
+                amazon_price.vat_excluded_price
+            )
         )
         buf.append("<ul>")
         for carrier, price in amazon_price.price_plus_customs.items():
