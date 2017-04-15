@@ -1,0 +1,33 @@
+<v-modal class="vModal--default" onclose="myModal.deactivate()">
+  <v-dialog heading="My modal" small center>
+    <v-close label="Close"></v-close>
+
+    <div class="container email-form">
+    
+        <h3>Send information</h3>
+
+        <form>
+
+            <input type="email" ng-model="email_addr" class="control-form" id="email-addr" placeholder="Email address">
+            <div ng-show="email_addr_error" class="field-error">This is not an email!</div>
+            <input type="text" ng-model="email_subject" class="control-form" id="email-subject" placeholder="Subject">
+            <div ng-show="email_subject_error" class="field-error">Please write a subject for your email!</div>
+
+            <button
+                id="btn-send-mail"
+                type="submit"
+                class="btn btn-success btn"
+                ng-click="send_mail()"
+                ng-disabled="send_button_text == 'Sent!'"
+            >
+                {{ send_button_text }}
+                <i ng-show="send_button_text == 'Sending'" class="fa fa-circle-o-notch fa-spin"></i>
+                <i ng-show="send_button_text == 'Sent!'" class="fa fa-check"></i>
+            </button>
+
+        </form>
+    
+    </div>
+
+  </v-dialog>
+</v-modal>

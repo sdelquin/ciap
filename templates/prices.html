@@ -1,0 +1,20 @@
+VAT excluded price: <span class="price">%% "%.2f€"|format(amazon_price.vat_excluded_price) %%</span>
+<br>
+Carriers:
+<ul>
+<% for carrier,price in amazon_price.price_plus_customs.items() %>
+    <li>
+        %% carrier %%:
+        <span class="price">%% "%.2f€"|format(price) %%</span>
+        <span class="custom">%% "%.2f"|format(amazon_price.price_of_customs[carrier]) %%</span>
+        <% if amazon_price.is_main_carrier(carrier) %>
+            <i class="fa fa-star main-carrier"></i>
+        <% endif %>
+    </li>
+<% endfor %>
+</ul>
+<div class="legend">
+    <i class="fa fa-star main-carrier"></i> Mostly used carrier
+    <br>
+    <i class="fa fa-info-circle info"></i> In <span class="custom">gray</span> prices of customs (included in price)
+</div>

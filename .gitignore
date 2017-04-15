@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+*.swp
+static/bower_components
+config.py
+uwsgi.cfg

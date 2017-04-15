@@ -1,0 +1,184 @@
+color1 = #007EC5
+color2 = #F38C08
+page-width = 800px
+font-size = 12pt
+font-color = #3C3C3C
+border-color = #CACACA
+font-family = "Raleway"
+footer-height = 75px
+
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    border-radius n
+
+font-setup(n=font-size)
+    font-family: font-family
+    font-size: n
+    color: font-color
+
+center-content()
+    display: block
+    text-align: center
+
+center-box(n=page-width)
+    max-width: n
+    margin: 0 auto
+
+responsive()
+    @media screen and (max-width:800px)
+        width: 100%
+
+body
+    font-setup()
+
+.content
+    center-box()
+
+a
+    color: color1
+    text-decoration: none
+    cursor: pointer
+
+    &:visited
+        color: color1
+        text-decoration: none
+
+    &:hover
+        color: darken(color1, 30%)
+        text-decoration: underline
+
+.title
+    center-content()
+    font-size: 40px
+    font-weight: bold
+    margin-top: 30px
+    margin-bottom: 20px
+    color: color1
+    text-decoration: none
+
+    &:hover
+        text-decoration: none
+        color: color1
+
+p
+    text-align: justify
+
+
+.price-line-wrapper
+    center-content()
+    margin-top: 30px
+    min-height: 250px
+
+.price-line
+    display: inline-block
+
+    & *
+        vertical-align: middle
+
+#input-price
+    border-radius(2px)
+    font-setup(12pt)
+    border: 1px solid border-color
+    padding-right: 4px
+    text-align: right
+    width: 100px
+    margin-right: 0
+    -webkit-transition: all 0.30s ease-in-out
+    -moz-transition: all 0.30s ease-in-out
+    -ms-transition: all 0.30s ease-in-out
+    -o-transition: all 0.30s ease-in-out
+    outline: none
+
+    &:focus
+        box-shadow: 0 0 5px color2
+        border: 1px solid color2
+
+.euro
+    display: inline-block
+    background: border-color
+    width: 25px
+    color: #747474
+    border-radius(2px)
+    margin-left: 0
+    line-height: 23px
+
+#btn-calc
+    display: inline-block
+    width: 80px
+    line-height: 30px
+    background: color1
+    border-radius(3px)
+    color: white
+    margin-left: 15px
+    font-size: 10pt
+    text-decoration: none
+
+    &:hover
+        background: darken(color1, 20%)
+
+.result
+    margin-top: 10px
+    margin-left: 40px
+    text-align: left
+
+.error
+    color: red
+    margin-left: 17px
+    text-align: left
+
+.footer-wrapper
+    margin-top: 30px
+    center-content()
+
+.footer
+    padding-top: 10px
+    border-top: 1px solid #E2E2E2
+
+.main-carrier
+    color: color2
+
+.price
+    font-weight: bold
+
+.custom
+    background: border-color
+    color: white
+    font-size: font-size - 3
+    border-radius(4px)
+    padding: 2px
+
+#tech-stack
+    text-align: left
+    position: fixed
+    z-index: 1
+    background: white
+    border: 1px solid border-color
+    border-bottom: 0
+    padding: 5px
+
+.legend
+    font-size: font-size - 2
+
+.info
+    color: color1
+
+#email-section
+    margin-top: 20px
+
+#email-addr
+    width: 300px
+    display: block
+    margin-top: 30px
+
+#email-subject
+    width: 300px
+    display: block
+    margin-top: 10px
+
+.field-error
+    color: red
+    font-size: 10pt
+
+#btn-send-mail
+    margin-top: 20px

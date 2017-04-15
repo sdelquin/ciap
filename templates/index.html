@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>CIAP</title>
+
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="/static/bower_components/v-modal/dist/v-modal.min.css" rel="stylesheet">
+    <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/static/bower_components/angular/angular.min.js"></script>
+    <script src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/static/bower_components/v-modal/dist/v-modal.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/app.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <% if not config.DEBUG %>
+        <% include "ganalytics.html" %>
+    <% endif %>
+</head>
+
+<body>
+
+<div class="container">
+
+    <a class="title" href="/">CIAP - Canary Islands Amazon Price</a>
+    <p>
+    We, in <a href="https://goo.gl/maps/3frsC" target="_blank">Canary Islands</a> have a different type of VAT (Value Added Tax)
+    lower than the one that uses the rest of Spain. But, we also have some other taxes due to <b>Customs</b>.
+    For these reasons, the price we see in whatever article in <a href="http://amazon.es" target="_blank">amazon.es</a>
+    is not the price we finally pay.
+    This site helps you to calculate the final price, based on <a href="http://www.amazon.es/gp/help/customer/display.html/ref=hp_left_sib?ie=UTF8&nodeId=201337490" target="_blank">this information</a>.
+    </p>
+    <p>
+    Just write below the price (in euros) you see in <b>amazon.es</b> and click the button.
+    Then you will get the results.
+    Note that we are <b>not considering the costs for transport</b> (added by amazon itself), and the products must be <b>shipped from</b> and <b>sold by</b> amazon.es, otherwise it could fall into aditional taxes.
+    </p>
+    
+    <div class="price-line-wrapper">
+        <div class="price-line">
+            <i class="fa fa-cog fa-spin" id="gear"></i>
+            <input type="text" placeholder="Price" id="input-price">
+            <i class="fa fa-eur euro"></i>
+            <a id="btn-calc">Calc!</a>
+            <div class="error"></div>
+            <div class="result"></div>
+
+            <div id="email-section" ng-app="myApp" ng-controller="AppController as appCtrl">
+                <button class="btn btn-success btn-sm" ng-click="myModal.activate()">Email it!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tech-stack">
+        <i class='fa fa-angle-right'></i> <a href='http://coffeescript.org/' target='_blank'>Coffeescript</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://docs.fabfile.org/en/1.8/' target='_blank'>Fabric</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://flask.pocoo.org/' target='_blank'>Flask</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://fontawesome.io/' target='_blank'>Font Awesome</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://www.google.com/fonts' target='_blank'>Google fonts</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://jquery.com/' target='_blank'>jQuery</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://nginx.com/' target='_blank'>Nginx</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://learnboost.github.io/stylus/' target='_blank'>Stylus</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://www.sublimetext.com/2' target='_blank'>SublimeText</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://supervisord.org/' target='_blank'>Supervisord</a><br>
+        <i class='fa fa-angle-right'></i> <a href='http://projects.unbit.it/uwsgi/' target='_blank'>Uwsgi</a><br>
+        <i class='fa fa-angle-right'></i> <a href='https://www.webfaction.com/' target='_blank'>Webfaction</a><br>
+    </div>
+
+    <div class="footer-wrapper">
+        <div class="footer">
+            2013 |
+            <a href="http://twitter.com/sdelquin" target="_blank"><i class="fa fa-twitter fa-lg"></i>sdelquin</a> |
+            <a id="btn-tech-stack">Technology stack</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
