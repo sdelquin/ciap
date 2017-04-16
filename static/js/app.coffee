@@ -30,7 +30,7 @@ angular.module "myApp", ["vModal"]
                         email_addr: $scope.email_addr
                         email_subject: $scope.email_subject
                 .success (data) ->
-                    $scope.send_button_text = "Sent!"
+                    $scope.send_button_text = "Done!"
                     console.log(data)
 
 .controller "AppController", (myModal, $scope) ->

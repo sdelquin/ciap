@@ -18,11 +18,11 @@
                 type="submit"
                 class="btn btn-success btn"
                 ng-click="send_mail()"
-                ng-disabled="send_button_text == 'Sent!'"
+                ng-disabled="send_button_text == 'Done!'"
             >
                 {{ send_button_text }}
                 <i ng-show="send_button_text == 'Sending'" class="fa fa-circle-o-notch fa-spin"></i>
-                <i ng-show="send_button_text == 'Sent!'" class="fa fa-check"></i>
+                <i ng-show="send_button_text == 'Done!'" class="fa fa-check"></i>
             </button>
 
         </form>

@@ -29,7 +29,7 @@ angular.module("myApp", ["vModal"]).factory("myModal", function(vModal) {
             email_subject: $scope.email_subject
           }
         }).success(function(data) {
-          $scope.send_button_text = "Sent!";
+          $scope.send_button_text = "Done!";
           return console.log(data);
         });
       }
