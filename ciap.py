@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 from core import AmazonPrice
 import elasticemail
 import config
+import os
+from flask import send_from_directory
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -66,6 +68,12 @@ def ajax():
         return ""
     else:
         return render_template("prices.html", amazon_price=amazon_price)
+
+
+@app.route("/.well-known/<path:path>")
+def well_known(path):
+    pwd = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(os.path.join(pwd, ".well-known"), path)
 
 
 if __name__ == "__main__":
