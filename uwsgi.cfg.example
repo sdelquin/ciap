@@ -1,8 +1,0 @@
-[uwsgi]
-socket = 127.0.0.1:xxxxx
-chdir = /path/to/your/ciap
-wsgi-file = /path/to/your/ciap/ciap.py
-callable = app
-master
-processes = 1
-protocol = http

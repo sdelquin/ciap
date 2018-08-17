@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+prettyconf = "*"
+sgw = {git = "https://github.com/sdelquin/sgw.git"}
+flask = "==0.12.1"
+
+[dev-packages]
+ipython = "*"
+"flake8" = "*"
+rope = "*"
+"fabric3" = "*"
+
+[requires]
+python_version = "3.6"

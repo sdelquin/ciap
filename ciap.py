@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from core import AmazonPrice
-import elasticemail
 import config
 import os
 from flask import send_from_directory
+from sgw.core import SendGrid
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -60,10 +60,17 @@ def ajax():
             )
         buf.append("</ul>")
         buf.append("<p>http://ciap.codelia.net</p>")
-        elasticemail.send(
-            email_addr,
-            email_subject,
-            "".join(buf)
+
+        email = SendGrid(
+            config.SENDGRID_APIKEY,
+            config.SENDGRID_FROM_EMAIL,
+            config.SENDGRID_FROM_NAME
+        )
+        email.send(
+            to=email_addr,
+            subject=email_subject,
+            msg="".join(buf),
+            html=True
         )
         return ""
     else:
