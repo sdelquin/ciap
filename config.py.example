@@ -1,7 +1,0 @@
-ELASTIC_EMAIL = {
-    "URL": "https://api.elasticemail.com/v2/email/send",
-    "FROM_MAIL": "noreply@codelia.net",
-    "FROM_NAME": "Codelia",
-    "APIKEY": "xxxxxxxxxxx"
-}
-GANALYTICS_TRACKING_ID = "xxxxxxxxxxx"
