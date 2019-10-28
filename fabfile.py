@@ -9,4 +9,4 @@ def deploy():
         run('git pull')
         run('pipenv install')
         run('bower install')
-        run('supctl restart ciap')
+        run('supervisorctl restart ciap')
