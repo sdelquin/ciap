@@ -7,7 +7,7 @@ name = "pypi"
 prettyconf = "*"
 sendgrid = "==5.6.0"
 sgw = {git = "https://github.com/sdelquin/sgw.git"}
-flask = "==0.12.1"
+flask = "==1.0"
 
 [dev-packages]
 ipython = "*"
