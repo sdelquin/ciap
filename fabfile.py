@@ -1,6 +1,6 @@
 from fabric.api import env, local, cd, run
 
-env.hosts = ['production']
+env.hosts = ['cloud']
 
 
 def deploy():
