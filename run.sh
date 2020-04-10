@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd $(dirname $0)
-source $(pipenv --venv)/bin/activate
+source ~/.virtualenvs/ciap/bin/activate
+cd "$(dirname "$0")"
 exec uwsgi --ini uwsgi.ini
