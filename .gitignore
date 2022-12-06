@@ -5,3 +5,4 @@ static/bower_components
 .well-known
 .env
 .vscode
+*.log
