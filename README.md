@@ -14,7 +14,7 @@ Set the corresponding values in the files.
 
 ### Virtualenv
 
-The program expects to have a virtualenv with *Python3* installed in `~/.virtualenvs/ciap`.
+The program expects to have a virtualenv with *Python3* installed in `~/.pyenv/versions/ciap`.
 
 ### Project directory (production)
 
